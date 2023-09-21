@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<_config:search-config
+	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../xsd/wc-search.xsd ">
+
+	<_config:server name="BasicConfiguration">
+		<_config:embedded />
+	</_config:server>
+	
+	<!-- for ratings reviews custom -->
+	<_config:profile name="IBM_findProductsBySearchTerm" indexName="CatalogEntry">
+	  <_config:query>  
+	    <_config:postprocessor 
+	    classname="com.ibm.commerce.foundation.server.services.rest.search.postprocessor.solr.SolrRESTSearchCatalogEntryViewUserDataQueryPostprocessor" />  
+	  </_config:query>   
+	  <_config:result>           
+	    <_config:field name="customerRanking_display"/>
+	  </_config:result>            
+	</_config:profile>
+	<!-- for ratings reviews custom -->
+	
+</_config:search-config>

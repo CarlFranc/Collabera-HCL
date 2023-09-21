@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ =================================================================
+  Licensed Materials - Property of HCL Technologies
+
+  HCL Commerce
+
+  (C) Copyright HCL Technologies Limited 1996, 2020
+
+ =================================================================
+-->
+<_config:DataloadBusinessObjectConfiguration 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../../../../xml/config/xsd/wc-dataload-businessobject.xsd" 
+	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
+
+  <_config:DataLoader className="com.ibm.commerce.foundation.dataload.BusinessObjectLoader" >
+
+    <_config:DataReader className="com.ibm.commerce.foundation.dataload.datareader.CSVReader"
+          firstLineIsHeader="true" useHeaderAsColumnName="true" />
+
+	<!--  Catalog Entry -->
+    <_config:BusinessObjectBuilder className="com.ibm.commerce.foundation.dataload.businessobjectbuilder.BaseBusinessObjectBuilder"
+      packageName="com.ibm.commerce.catalog.facade.datatypes.CatalogPackage" dataObjectType="CatalogEntryType" >
+
+      <_config:DataMapping>
+        
+        <!-- The part number of the catalog entry -->
+        <_config:mapping xpath="CatalogEntryIdentifier/ExternalIdentifier/PartNumber" value="PartNumber" />
+		<!-- The catalog entry type -->
+        <_config:mapping xpath="catalogEntryTypeCode" value="Type" />
+        <!-- The catalog entry currency -->
+        <_config:mapping xpath="ListPrice/Price/currency" value="CurrencyCode" />
+		<!-- The catalog entry custom field 3 -->
+        <_config:mapping xpath="CatalogEntryAttributes/Attributes[3]/StringValue/value" value="Field3" />
+		<!-- The catalog entry custom field 4 -->
+        <_config:mapping xpath="CatalogEntryAttributes/Attributes[4]/StringValue/value" value="Field4" />
+
+      
+      </_config:DataMapping>
+      <_config:BusinessObjectMediator className="com.ibm.commerce.catalog.dataload.mediator.CatalogEntryMediator" componentId="com.ibm.commerce.catalog" >
+
+        <_config:property name="createParentProductWhenMissing" value="false" />
+        <_config:property name="validateCatalog" value="true" />
+        <_config:property name="validateCatalogEntry" value="true" />
+        <_config:property name="syncSalesCatalogs" value="true" />
+
+      </_config:BusinessObjectMediator>
+    </_config:BusinessObjectBuilder>
+	
+  </_config:DataLoader>
+
+</_config:DataloadBusinessObjectConfiguration>

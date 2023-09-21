@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<_config:DataLoadEnvConfiguration
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../xsd/wc-dataload-env.xsd"
+	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
+
+	<!--The global business context setting for the loader. Default setting is loading data to Madisions store's master catalog. If you want to load in different store or catalog, you need to update the 
+storeIdentifier and catalogIdentifier in the following section.-->
+	<_config:BusinessContext storeIdentifier="AuroraESite" catalogIdentifier="Extended Sites Catalog Asset Store Consumer Direct" langId="-1" currency="USD" /> 
+	<!-- <_config:BusinessContext storeIdentifier="Extended Sites Catalog Asset Store" catalogIdentifier="Extended Sites Catalog Asset Store Consumer Direct" langId="-1" currency="USD" /> -->
+
+	<!-- database setting for derby in Toolkit -->
+	<!-- <_config:Database type="derby" name="..\db\mall" /> -->
+	
+	<!-- database setting for Oracle -->	
+	<!-- 
+	<_config:Database name="<database name>" user="<user>" password="<password>" port="1521" schema="<schema name>" server="<server>" type="Oracle" />
+	-->	
+	
+	<!-- database setting for AIX/DB2 server -->
+	<_config:Database type="db2" name="mall" user="wcs" password="O4fsT1V4NgfKVildNuebg8ytvb+ycBuVOuoDdTqd67M=" server="localhost" port="50000" schema="wcs" />
+
+	<_config:IDResolver className="com.ibm.commerce.foundation.dataload.idresolve.IDResolverImpl" cacheSize="10000000" />
+
+	<_config:DataWriter className="com.ibm.commerce.foundation.dataload.datawriter.JDBCDataWriter" />
+
+</_config:DataLoadEnvConfiguration>

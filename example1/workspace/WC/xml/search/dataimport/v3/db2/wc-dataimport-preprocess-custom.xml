@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<_config:DIHPreProcessConfig xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../../xsd/wc-dataimport-preprocess.xsd ">
+  
+  <!-- load ratings into temp table -->
+  <_config:data-processing-config processor="com.mycompany.commerce.preprocess.StaticRatingsDataPreProcessor" batchSize="500">
+    <_config:table definition="CREATE TABLE TI_RATING_TEMP ( PART_NUMBER VARCHAR(256),RTYPE VARCHAR(256), RATING VARCHAR(256))" name="TI_RATING_TEMP"/>
+    <_config:query sql=""/>
+    <_config:mapping>
+      <_config:key queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID"/>
+      <_config:column-mapping>
+        <_config:column-column-mapping>
+           <_config:column-column queryColumn="" tableColumn="" />
+        </_config:column-column-mapping>
+        </_config:column-mapping>
+    </_config:mapping>    
+
+    <!-- this property is added new to locate the input file path instead of hard coding it to be in WC\bin -->
+    <_config:property name="inputFile" value="W:\WCDE_V9\Ratings.xml"/>
+  </_config:data-processing-config>
+  <_config:data-processing-config processor="com.mycompany.commerce.preprocess.StaticRatingsDataPopulator" batchSize="500">
+    <_config:table definition="CREATE TABLE TI_RATING ( CATENTRY_ID BIGINT NOT NULL, PART_NUMBER VARCHAR(256),RTYPE VARCHAR(256), RATING VARCHAR(256))" 
+      name="TI_RATING"/>
+   <_config:query sql="insert into TI_RATING ( catentry_id,part_number, rating,rtype ) select catentry_id,part_number,rating,rtype 
+     from catentry,ti_rating_temp where catentry.partnumber=ti_rating_temp.part_number"/>
+    <_config:mapping>
+      <_config:key queryColumn="CATENTRY_ID" tableColumn="CATENTRY_ID"/>
+      <_config:column-mapping>
+        <_config:column-column-mapping>
+           <_config:column-column queryColumn="" tableColumn="" />
+        </_config:column-column-mapping>
+        </_config:column-mapping>
+    </_config:mapping>    
+  </_config:data-processing-config>
+</_config:DIHPreProcessConfig>

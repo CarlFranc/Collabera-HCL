@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<_config:DataloadBusinessObjectConfiguration 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../../../../xml/config/xsd/wc-dataload-businessobject.xsd" 
+	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
+
+  <_config:DataLoader className="com.ibm.commerce.foundation.dataload.BusinessObjectLoader" >
+    <_config:DataReader className="com.ibm.commerce.foundation.dataload.datareader.CSVReader"
+          firstLineIsHeader="true" useHeaderAsColumnName="true" >
+		  <_config:Data>
+			<_config:column number="1" name="MY_ID" />
+            <_config:column number="2" name="TEXT_COL" />
+	        <_config:column number="3" name="INT_COL" />	
+        </_config:Data>
+     </_config:DataReader>
+
+    <_config:BusinessObjectBuilder className="com.ibm.commerce.foundation.dataload.businessobjectbuilder.TableObjectBuilder" >
+	
+	<_config:Table name="XCUSTOMTABLE">
+		<_config:Column name="GENERATED_ID" value="GENERATED_ID" valueFrom="IDResolve">
+		  <_config:IDResolve tableName="XCUSTOMTABLE" generateNewKey="true" >
+			
+		  </_config:IDResolve>
+		</_config:Column>
+		<_config:Column name="MY_ID" value="MY_ID" valueFrom="InputData" />
+		<_config:Column name="TEXT_COL" value="TEXT_COL" valueFrom="InputData" />
+		<_config:Column name="INT_COL" value="INT_COL" valueFrom="InputData" />
+	</_config:Table>
+	
+	<_config:BusinessObjectMediator 
+		className="com.ibm.commerce.foundation.dataload.businessobjectmediator.TableObjectMediator">
+	</_config:BusinessObjectMediator>
+	</_config:BusinessObjectBuilder>
+
+  </_config:DataLoader>
+
+</_config:DataloadBusinessObjectConfiguration>

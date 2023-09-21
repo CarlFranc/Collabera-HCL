@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fields>
+<field name="customerRanking" type="tfloat" indexed="true" stored="false" multiValued="false" />
+<field name="customerRanking_display" type="float" indexed="true" stored="true" multiValued="false" />
+<copyField source="customerRanking" dest="customerRanking_display"/>
+</fields>
+

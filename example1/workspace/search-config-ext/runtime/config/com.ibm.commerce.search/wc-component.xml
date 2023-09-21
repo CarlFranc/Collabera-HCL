@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<_config:DevelopmentComponentConfiguration
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../xsd/wc-component.xsd "
+	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
+	
+	<_config:valuemappingservice>
+		<_config:valuemapping externalName="CatalogEntryUserDataFieldNameMapping" internalName="CatalogEntryUserDataFieldNameMapping">
+				<_config:valuemap externalValue="x_customerRanking" internalValue="customerRanking_display" />
+		</_config:valuemapping>
+	</_config:valuemappingservice>
+</_config:DevelopmentComponentConfiguration>
