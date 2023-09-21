@@ -1,0 +1,5 @@
+CatalogEntryUpdate,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+PartNumber,ParentPartNumber,Sequence,ParentGroupIdentifier,Name,ShortDescription,LongDescription,Thumbnail,FullImage,Keyword,AuxDescription1,AuxDescription2,Available,Published,AvailabilityDate_LocaleSpecific,ManufacturerPartNumber,Manufacturer,OnSpecial,Buyable,StartDate,EndDate,OnAuction,SUBSCPTYPE_ID,DISALLOW_REC_ORDER,URL,Field1,Field2,Field3,Field4,Field5,AvailabilityDate,LastOrderDate,EndOfServiceDate,DiscontinueDate,WeightMeasure,Weight,Length,Width,Height,SizeMeasure,NominalQuantity,QuantityMultiple,QuantityMeasure,ParentToChildCatEntryRelField1,ParentToChildCatEntryRelField2,ParentToChildCatEntryRelField3,Delete
+GVE034_340101,,,,,,,,,,,,,,,,,,,,,,,,,,,10,ABCD,,,,,,,,,,,,,,,,,,
+GVE034_340501,,,,,,,,,,,,,,,,,,,,,,,,,,,8,EFG,,,,,,,,,,,,,,,,,,
+CAC024_240101,,,,,,,,,,,,,,,,,,,,,,,,,,,5,AASFRV,,,,,,,,,,,,,,,,,,

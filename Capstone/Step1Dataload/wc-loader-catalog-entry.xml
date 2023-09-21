@@ -32,10 +32,17 @@
         <_config:mapping xpath="catalogEntryTypeCode" value="Type" />
         <!-- The catalog entry currency -->
         <_config:mapping xpath="ListPrice/Price/currency" value="CurrencyCode" />
-		<!-- The catalog entry custom field 3 -->
-        <_config:mapping xpath="CatalogEntryAttributes/Attributes[3]/StringValue/value" value="Field3" />
+		<!-- The catalog entry custom field 3 --> 
+        <_config:mapping xpath="CatalogEntryAttributes/Attributes[3]/StringValue/value" value="Field3" valueFrom="InputData" />
 		<!-- The catalog entry custom field 4 -->
-        <_config:mapping xpath="CatalogEntryAttributes/Attributes[4]/StringValue/value" value="Field4" />
+        <_config:mapping xpath="CatalogEntryAttributes/Attributes[4]/StringValue/value" value="Field4" valueFrom="InputData" />
+		
+		<!-- <_config:mapping xpath="CatalogEntryAttributes/Attributes[0]/ExtendedData/Field3" value="Field3" valueFrom="InputData" />
+		
+		<_config:mapping xpath="CatalogEntryAttributes/Attributes[0]/ExtendedData/Field4" value="Field4" valueFrom="InputData" /> -->
+
+		<!-- The Delete indicator -->
+        <_config:mapping xpath="" value="Delete" deleteValue="1" /> 
 
       
       </_config:DataMapping>
