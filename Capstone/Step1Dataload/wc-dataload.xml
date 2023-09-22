@@ -16,12 +16,11 @@
 	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
 
 	<_config:DataLoadEnvironment configFile="wc-dataload-env.xml" />
-
-
+	
     <_config:LoadOrder commitCount="100" batchSize="1" dataLoadMode="Update" >
 		<_config:property name="firstTwoLinesAreHeader" value="true" />
-			<_config:LoadItem name="CatalogEntryUpdate" loadSequence="3.1" dataLoadMode="Update" businessObjectConfigFile="wc-loader-catalog-entry1.xml">
-				 <_config:DataSourceLocation location="CategoryEntries2.csv" oldLocation="" />
+			<_config:LoadItem name="CatalogEntryUpdate" loadSequence="3.1" dataLoadMode="Update" businessObjectConfigFile="wc-loader-catentryupdate.xml">
+				 <_config:DataSourceLocation location="CatentriesUpdate.csv" oldLocation="" />
 				 <_config:BusinessContext languageId="-1"/>
 			</_config:LoadItem>
     </_config:LoadOrder>

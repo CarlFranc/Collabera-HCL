@@ -16,14 +16,10 @@
 	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
 	<_config:BusinessContext storeIdentifier="Extended Sites Catalog Asset Store" catalogIdentifier="Extended Sites Catalog Asset Store" 
 		languageId="-1" currency="USD">
-
 	</_config:BusinessContext>
-	<!-- database setting for AIX/DB2 server -->
-
+	
 	<_config:Database type="db2" name="mall" user="db2admin" password="wtVCZvyOdQNfe4euzXLGyeqm3GZUSjhRVJOEYCdIfyc=" server="localhost" port="50000" schema="wcs" />
-	  
 	<_config:IDResolver className="com.ibm.commerce.foundation.dataload.idresolve.IDResolverImpl" cacheSize="10000000"/>
-
 	<_config:DataWriter className="com.ibm.commerce.foundation.dataload.datawriter.JDBCDataWriter" />
 
 </_config:DataLoadEnvConfiguration>
