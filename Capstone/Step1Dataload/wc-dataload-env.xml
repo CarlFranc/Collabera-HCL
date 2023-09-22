@@ -14,7 +14,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.ibm.com/xmlns/prod/commerce/foundation/config ../../../xml/config/xsd/wc-dataload-env.xsd" 
 	xmlns:_config="http://www.ibm.com/xmlns/prod/commerce/foundation/config">
-	<_config:BusinessContext storeIdentifier="AuroraESite" catalogIdentifier="Extended Sites Catalog Asset Store" 
+	<_config:BusinessContext storeIdentifier="Extended Sites Catalog Asset Store" catalogIdentifier="Extended Sites Catalog Asset Store" 
 		languageId="-1" currency="USD">
 
 	</_config:BusinessContext>
