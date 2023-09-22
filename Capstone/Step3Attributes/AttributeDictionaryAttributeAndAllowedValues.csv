@@ -1,0 +1,3 @@
+AttributeDictionaryAttributeAndAllowedValues,,,,,,,,,,,,,,,,
+Identifier,Type,AttributeType,Sequence,Displayable,StoreDisplay,Comparable,Facetable,Searchable,Merchandisable,Name,AllowedValue1,AllowedValue2,AllowedValue3,AllowedValue4,AllowedValue5,Delete
+GiftWrappable,STRING,AllowedValues,2,TRUE,0,FALSE,FALSE,FALSE,FALSE,Gift Wrappable,Yes,No,,,,

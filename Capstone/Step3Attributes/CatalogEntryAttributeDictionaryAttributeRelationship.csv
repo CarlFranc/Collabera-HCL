@@ -1,0 +1,5 @@
+CatalogEntryAttributeDictionaryAttributeRelationship,,,,,,
+PartNumber,AttributeIdentifier,ValueIdentifier,Value,Usage,Sequence,Delete
+AuroraWMDRS-172,GiftWrappable,Yes,,Descriptive,2,
+AuroraWMDRS-173,GiftWrappable,Yes,,Descriptive,2,
+AuroraWMDRS-452,GiftWrappable,Yes,,Descriptive,2,
